@@ -6,4 +6,3 @@ Libraries: * WiFi.h — керування Wi-Fi з'єднанням.
 WebServer.h — обробка HTTP-запитів.
 
 LittleFS.h — робота з файловою системою для зберігання HTML/CSS.
-
