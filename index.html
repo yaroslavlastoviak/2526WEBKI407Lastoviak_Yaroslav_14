@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lastoviak // Control Unit</title>
+    <style>
+        :root { --accent: #ff5f00; --bg: #1a1a1a; --panel: #262626; --text: #e0e0e0; }
+        body { background: var(--bg); color: var(--text); font-family: 'Helvetica', Arial, sans-serif; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; }
+        .unit-box { width: 380px; background: var(--panel); border-left: 5px solid var(--accent); padding: 40px; box-shadow: 20px 20px 60px #101010; }
+        h1 { font-size: 1.2em; text-transform: uppercase; letter-spacing: 2px; margin: 0 0 20px 0; color: var(--accent); }
+        .data-row { display: flex; justify-content: space-between; padding: 10px 0; border-bottom: 1px solid #333; font-size: 0.9em; }
+        .label { color: #888; text-transform: uppercase; font-size: 0.8em; }
+        .value { font-weight: bold; }
+        .status-led { display: inline-block; width: 8px; height: 8px; background: var(--accent); border-radius: 50%; margin-right: 5px; box-shadow: 0 0 8px var(--accent); }
+        .footer { margin-top: 30px; font-size: 0.7em; opacity: 0.4; text-align: left; }
+    </style>
+</head>
+<body>
+    <div class="unit-box">
+        <h1>Control_Unit_v1.0</h1>
+        <div class="data-row">
+            <span class="label">System Status</span>
+            <span class="value"><span class="status-led"></span>Active</span>
+        </div>
+        <div class="data-row">
+            <span class="label">Module Owner</span>
+            <span class="value">Lastoviak Yaroslav</span>
+        </div>
+        <div class="data-row">
+            <span class="label">Hardware</span>
+            <span class="value">ESP32-WROOM-32</span>
+        </div>
+        <div class="data-row">
+            <span class="label">Filesystem</span>
+            <span class="value">LittleFS</span>
+        </div>
+        <div class="footer">
+            ID: LSTVK-7742 // INDUSTRIAL INTERFACE
+        </div>
+    </div>
+</body>
+</html>
