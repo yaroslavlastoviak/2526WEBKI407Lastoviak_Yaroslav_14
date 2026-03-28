@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lastoviak // API Control</title>
+    <style>
+        :root { --accent: #ff5f00; --bg: #1a1a1a; --panel: #262626; --text: #e0e0e0; }
+        body { background: var(--bg); color: var(--text); font-family: 'Helvetica', sans-serif; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; }
+        .control-unit { width: 350px; background: var(--panel); border-top: 4px solid var(--accent); padding: 30px; box-shadow: 10px 10px 40px #000; }
+        h2 { font-size: 1.1em; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 25px; }
+        .btn-group { display: flex; gap: 10px; justify-content: center; }
+        button { background: transparent; border: 1px solid var(--text); color: var(--text); padding: 10px 20px; cursor: pointer; text-transform: uppercase; font-weight: bold; transition: 0.2s; }
+        button:hover { background: var(--accent); border-color: var(--accent); color: #000; }
+        #status-display { margin-top: 25px; font-size: 0.8em; border-top: 1px solid #333; padding-top: 15px; color: #888; }
+    </style>
+</head>
+<body>
+    <div class="control-unit">
+        <h2>Power_Management</h2>
+        <div class="btn-group">
+            <button onclick="sendCmd(1)">System_On</button>
+            <button onclick="sendCmd(0)">System_Off</button>
+        </div>
+        <div id="status-display">STATUS: READY // OPERATOR: LASTOVIAK</div>
+    </div>
+
+    <script>
+        function sendCmd(state) {
+            const display = document.getElementById('status-display');
+            display.innerText = "STATUS: TRANSMITTING...";
+            
+            fetch('/api/v1/led', {
+                method: 'POST',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify({status: state})
+            })
+            .then(res => res.json())
+            .then(data => {
+                display.innerText = "STATUS: " + (state ? "SYSTEM_ACTIVE" : "SYSTEM_OFFLINE");
+            })
+            .catch(err => {
+                display.innerText = "STATUS: ERROR_LINK_LOST";
+            });
+        }
+    </script>
+</body>
+</html>
