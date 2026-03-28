@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>System Setup // Lastoviak</title>
+    <style>
+        :root { --accent: #ff5f00; --bg: #1a1a1a; --panel: #262626; --text: #e0e0e0; }
+        body { background: var(--bg); color: var(--text); font-family: Helvetica, Arial, sans-serif; margin: 0; display: flex; justify-content: center; align-items: center; height: 100vh; }
+        .config-card { width: 320px; background: var(--panel); border-top: 4px solid var(--accent); padding: 35px; box-shadow: 15px 15px 50px #000; }
+        h2 { font-size: 1em; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 25px; color: var(--accent); }
+        input { width: 100%; padding: 12px; margin-bottom: 15px; background: #111; border: 1px solid #333; color: #fff; box-sizing: border-box; outline: none; }
+        input:focus { border-color: var(--accent); }
+        button { width: 100%; padding: 12px; background: var(--accent); border: none; color: #000; font-weight: bold; cursor: pointer; text-transform: uppercase; transition: 0.3s; }
+        button:hover { background: #fff; }
+        .footer { font-size: 0.7em; margin-top: 25px; opacity: 0.4; text-align: center; border-top: 1px solid #333; padding-top: 15px; }
+    </style>
+</head>
+<body>
+    <div class="config-card">
+        <h2>Network_Sync</h2>
+        <form action="/save" method="POST">
+            <input type="text" name="ssid" placeholder="Network SSID" required>
+            <input type="password" name="pass" placeholder="Security Token" required>
+            <button type="submit">Initialize Link</button>
+        </form>
+        <div class="footer">
+            UNIT: LSTVK-7742 // INDUSTRIAL OS
+        </div>
+    </div>
+</body>
+</html>
