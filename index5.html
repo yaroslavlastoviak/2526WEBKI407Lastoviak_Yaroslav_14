@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lastoviak // Secure Node</title>
+    <style>
+        :root { --accent: #ff5f00; --bg: #1a1a1a; --panel: #262626; --text: #e0e0e0; }
+        body { background: var(--bg); color: var(--text); font-family: Helvetica, sans-serif; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; }
+        .secure-box { width: 360px; background: var(--panel); border-right: 5px solid var(--accent); padding: 40px; box-shadow: 0 0 40px #000; }
+        h1 { font-size: 1.1em; letter-spacing: 2px; text-transform: uppercase; color: var(--accent); margin-bottom: 25px; border-bottom: 1px solid #333; padding-bottom: 15px; }
+        .info-row { display: flex; justify-content: space-between; margin-bottom: 10px; font-size: 0.9em; }
+        .tag { color: #888; text-transform: uppercase; font-size: 0.8em; }
+        .status { color: #00ff00; font-weight: bold; }
+        .footer { margin-top: 35px; font-size: 0.7em; opacity: 0.3; text-transform: uppercase; letter-spacing: 1px; }
+    </style>
+</head>
+<body>
+    <div class="secure-box">
+        <h1>SECURE_CORE_V5</h1>
+        <div class="info-row">
+            <span class="tag">Link Status:</span>
+            <span class="status">ENCRYPTED</span>
+        </div>
+        <div class="info-row">
+            <span class="tag">Protocol:</span>
+            <span>TLS 1.2 / HTTPS</span>
+        </div>
+        <div class="info-row">
+            <span class="tag">Storage:</span>
+            <span>LittleFS Internal</span>
+        </div>
+        <div class="footer">OPERATOR: LASTOVIAK YAROSLAV</div>
+    </div>
+</body>
+</html>
